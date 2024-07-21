@@ -1,9 +1,11 @@
+/* page-swag.css */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: #DDDBDA; /* Background color */
+    background-color: #FFFFFF; /* Primary color */
     color: #213E60; /* Text color */
 }
 
@@ -17,8 +19,6 @@ nav ul {
     justify-content: center;
     list-style: none;
     padding: 0;
-    background-color: #213E60; /* Navbar background color */
-    border-radius: 5px;
 }
 
 nav ul li {
@@ -26,22 +26,22 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #FFFFFF; /* Navbar link color */
+    color: #213E60;
     text-decoration: none;
-    padding: 10px 15px;
-    border: 1px solid #FFFFFF; /* Border color */
+    padding: 5px 10px;
+    border: 1px solid #213E60;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #FFFFFF; /* Navbar link hover background color */
-    color: #213E60; /* Navbar link hover text color */
+    background-color: #213E60;
+    color: #FFFFFF;
     text-decoration: none;
 }
 
 h1, h2, h3, h4 {
-    color: #213E60; /* Heading color */
+    color: #213E60;
     text-align: center;
 }
 
@@ -50,7 +50,7 @@ h1 {
 }
 
 a {
-    color: #213E60; /* Link color */
+    color: #213E60;
     text-decoration: none;
 }
 
@@ -65,14 +65,13 @@ table {
 }
 
 th, td {
-    border: 1px solid #BDC0C0; /* Table border color */
+    border: 1px solid #444;
     padding: 12px;
     text-align: left;
 }
 
 th {
-    background-color: #213E60; /* Table header background color */
-    color: #FFFFFF; /* Table header text color */
+    background-color: #333;
 }
 
 input[type="text"], button {
@@ -81,29 +80,29 @@ input[type="text"], button {
 }
 
 button {
-    background-color: #213E60; /* Button background color */
-    color: #FFFFFF; /* Button text color */
+    background-color: #213E60;
+    color: #FFFFFF;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 5px; /* Rounded corners */
 }
 
 button:hover {
-    background-color: #1A2A43; /* Button hover background color */
+    background-color: #1a2a3a;
 }
 
-#searchResults, #movieDetails {
-    background-color: #FFFFFF; /* Search results and movie details background color */
+#searchResults, #bookDetails {
+    background-color: #DDDBDA;
     padding: 15px;
     margin-top: 20px;
     border-radius: 5px;
-    border: 1px solid #BDC0C0; /* Border color */
 }
 
 #searchResults div {
     margin-bottom: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #BDC0C0; /* Border color */
+    border-bottom: 1px solid #444;
 }
 
 #searchResults div:last-child {
@@ -123,11 +122,13 @@ button:hover {
     padding: 10px;
     width: 50%; /* Adjust the width as needed */
     margin-right: 10px;
+    border-radius: 5px; /* Rounded corners */
 }
 
 #searchButton {
     font-size: 1.2em; /* Enlarge the button */
     padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
 }
 
 /* Pagination styling */
@@ -145,6 +146,7 @@ button:hover {
     color: #213E60;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px; /* Rounded corners */
 }
 
 #pagination button:hover {
@@ -159,30 +161,30 @@ button:hover {
     gap: 20px;
 }
 
-#searchResults.grid-view .movie {
-    flex: 1 1 calc(33.333% - 20px); /* Adjust the width of each movie card */
-    background-color: #FFFFFF;
+#searchResults.grid-view .book {
+    flex: 1 1 calc(33.333% - 20px); /* Adjust the width of each book card */
+    background-color: #DDDBDA;
     padding: 15px;
     border-radius: 5px;
     text-align: center;
-    border: 1px solid #BDC0C0; /* Border color */
+    border: 1px solid #000; /* Black border around each search result */
 }
 
 #searchResults.list-view {
     display: block;
 }
 
-#searchResults.list-view .movie {
+#searchResults.list-view .book {
     display: flex;
     align-items: center;
-    background-color: #FFFFFF;
+    background-color: #DDDBDA;
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
-    border: 1px solid #BDC0C0; /* Border color */
+    border: 1px solid #000; /* Black border around each search result */
 }
 
-#searchResults.list-view .movie img {
+#searchResults.list-view .book img {
     margin-right: 20px;
 }
 
@@ -200,35 +202,34 @@ button:hover {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 5px; /* Rounded corners */
 }
 
 #viewToggle button:hover {
-    background-color: #1A2A43;
+    background-color: #1a2a3a;
 }
 
-#searchInput {
-    font-size: 1.2em; /* Enlarge the search bar */
-    padding: 10px;
-    width: 50%; /* Adjust the width as needed */
-    margin-right: 10px;
-    border: 1px solid #BDC0C0; /* Border color */
-    border-radius: 25px; /* Rounded corners */
+/* Project Overview section */
+.project-overview {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
 }
 
-#searchButton {
-    font-size: 1.2em; /* Enlarge the button */
-    padding: 10px 20px;
-    border: none;
-    background-color: #213E60; /* Button background color */
-    color: #FFFFFF; /* Button text color */
-    border-radius: 25px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s;
+.project-overview li {
+    position: relative;
+    padding-left: 25px; /* Space for the bullet */
+    margin-bottom: 10px; /* Space between items */
+    font-size: 1em;
+    line-height: 1.6;
+    color: #213E60; /* Text color */
 }
 
-#searchButton:hover {
-    background-color: #1A2A43; /* Button hover background color */
+.project-overview li::before {
+    content: "♦"; /* Diamond shape */
+    position: absolute;
+    left: 0;
+    color: #DDDBDA; /* Bullet color */
+    font-size: 1.5em; /* Size of the bullet */
+    line-height: 1; /* Center the bullet vertically */
 }
-
-/* Existing styles... */
-
