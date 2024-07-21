@@ -205,3 +205,30 @@ button:hover {
 #viewToggle button:hover {
     background-color: #1A2A43;
 }
+
+#searchInput {
+    font-size: 1.2em; /* Enlarge the search bar */
+    padding: 10px;
+    width: 50%; /* Adjust the width as needed */
+    margin-right: 10px;
+    border: 1px solid #BDC0C0; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+}
+
+#searchButton {
+    font-size: 1.2em; /* Enlarge the button */
+    padding: 10px 20px;
+    border: none;
+    background-color: #213E60; /* Button background color */
+    color: #FFFFFF; /* Button text color */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+    background-color: #1A2A43; /* Button hover background color */
+}
+
+/* Existing styles... */
+
