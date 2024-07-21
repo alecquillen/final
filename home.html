@@ -1,1 +1,32 @@
-welcome to the real world luke.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="page-swag.css">
+</head>
+<body>
+    <div class="header">
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="library.html">Bookshelf</a>
+        </div>
+        <h1><a href="index.html">The Individual Project</a></h1>
+    </div>
+    <main>
+        <h2>Book Search</h2>
+        <div id="searchContainer">
+            <input type="text" id="searchInput" placeholder="Enter book title">
+            <button id="searchButton" onclick="searchBooks()">Search</button>
+        </div>
+        <div id="viewButtons">
+            <button id="gridViewButton" onclick="setGridView()">Grid View</button>
+            <button id="listViewButton" onclick="setListView()">List View</button>
+        </div>
+        <div id="searchResults"></div>
+        <div id="pagination"></div>
+    </main>
+    <script src="movies.js"></script>
+</body>
+</html>
