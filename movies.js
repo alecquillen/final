@@ -3,10 +3,9 @@ const RESULTS_PER_PAGE = 10;
 const MAX_PAGES = 5; // Limit the pagination to 5 pages
 let currentView = 'grid'; // Default view
 
-// Home/Movie Search Page
 function searchMovies() {
     const searchTerm = document.getElementById('searchInput').value;
-    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${searchTerm}`;
+    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${searchTerm}.json`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -61,7 +60,7 @@ function setupPagination(totalItems, searchTerm) {
 
 function fetchPage(page, searchTerm) {
     const startIndex = (page - 1) * RESULTS_PER_PAGE;
-    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${searchTerm}&offset=${startIndex}`;
+    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${searchTerm}.json&offset=${startIndex}`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -130,7 +129,7 @@ function displayLibrary(movies) {
 }
 
 function addToLibrary(movieId) {
-    const url = `https://imdb188.p.rapidapi.com/api/v1/getMovieDetails?movie_id=${movieId}`;
+    const url = `https://imdb188.p.rapidapi.com/api/v1/getMovieDetails?movie_id=${movieId}.json`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -172,7 +171,7 @@ function removeFromLibrary(movieId) {
 
 // Fetch movie details and display them on the movie-details page
 function fetchMovieDetails(movieId) {
-    const url = `https://imdb188.p.rapidapi.com/api/v1/getMovieDetails?movie_id=${movieId}`;
+    const url = `https://imdb188.p.rapidapi.com/api/v1/getMovieDetails?movie_id=${movieId}.json`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -211,3 +210,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
