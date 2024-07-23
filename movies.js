@@ -5,7 +5,7 @@ let currentView = 'grid'; // Default view
 
 function searchMovies() {
     const searchTerm = document.getElementById('searchInput').value;
-    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${searchTerm}.json`; // Ensure .json suffix
+    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${encodeURIComponent(searchTerm)}.json`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -19,8 +19,9 @@ function searchMovies() {
             displaySearchResults(data);
             setupPagination(data.totalResults, searchTerm);
         },
-        error: function(error) {
+        error: function(xhr, status, error) {
             console.error('Error fetching data:', error);
+            alert('An error occurred while fetching data. Please try again.');
         }
     });
 }
@@ -60,7 +61,7 @@ function setupPagination(totalItems, searchTerm) {
 
 function fetchPage(page, searchTerm) {
     const startIndex = (page - 1) * RESULTS_PER_PAGE;
-    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${searchTerm}.json&offset=${startIndex}`; // Ensure .json suffix
+    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${encodeURIComponent(searchTerm)}.json&offset=${startIndex}`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -73,8 +74,9 @@ function fetchPage(page, searchTerm) {
         success: function(data) {
             displaySearchResults(data);
         },
-        error: function(error) {
+        error: function(xhr, status, error) {
             console.error('Error fetching data:', error);
+            alert('An error occurred while fetching data. Please try again.');
         }
     });
 }
@@ -158,6 +160,7 @@ function addToLibrary(movieId) {
         },
         error: function(error) {
             console.error('Error adding movie to library:', error);
+            alert('An error occurred while adding the movie to the library. Please try again.');
         }
     });
 }
@@ -192,6 +195,7 @@ function fetchMovieDetails(movieId) {
         },
         error: function(error) {
             console.error('Error fetching movie details:', error);
+            alert('An error occurred while fetching movie details. Please try again.');
         }
     });
 }
@@ -210,4 +214,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
