@@ -5,7 +5,7 @@ let currentView = 'grid'; // Default view
 
 function searchMovies() {
     const searchTerm = document.getElementById('searchInput').value;
-    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${encodeURIComponent(searchTerm)}.json`; // Ensure .json suffix
+    const url = `https://imdb-movies-web-series-etc-search.p.rapidapi.com/api/v1/searchIMDB?query=${encodeURIComponent(searchTerm)}.json`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -13,7 +13,7 @@ function searchMovies() {
         dataType: 'json',
         headers: {
             'x-rapidapi-key': API_KEY,
-            'x-rapidapi-host': 'imdb188.p.rapidapi.com'
+            'x-rapidapi-host': 'imdb-movies-web-series-etc-search.p.rapidapi.com'
         },
         success: function(data) {
             displaySearchResults(data);
@@ -61,7 +61,7 @@ function setupPagination(totalItems, searchTerm) {
 
 function fetchPage(page, searchTerm) {
     const startIndex = (page - 1) * RESULTS_PER_PAGE;
-    const url = `https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=${encodeURIComponent(searchTerm)}.json&offset=${startIndex}`; // Ensure .json suffix
+    const url = `https://imdb-movies-web-series-etc-search.p.rapidapi.com/api/v1/searchIMDB?query=${encodeURIComponent(searchTerm)}.json&offset=${startIndex}`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -69,7 +69,7 @@ function fetchPage(page, searchTerm) {
         dataType: 'json',
         headers: {
             'x-rapidapi-key': API_KEY,
-            'x-rapidapi-host': 'imdb188.p.rapidapi.com'
+            'x-rapidapi-host': 'imdb-movies-web-series-etc-search.p.rapidapi.com'
         },
         success: function(data) {
             displaySearchResults(data);
@@ -131,7 +131,7 @@ function displayLibrary(movies) {
 }
 
 function addToLibrary(movieId) {
-    const url = `https://imdb188.p.rapidapi.com/api/v1/getMovieDetails?movie_id=${movieId}.json`; // Ensure .json suffix
+    const url = `https://imdb-movies-web-series-etc-search.p.rapidapi.com/api/v1/getMovieDetails?movie_id=${movieId}.json`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -139,7 +139,7 @@ function addToLibrary(movieId) {
         dataType: 'json',
         headers: {
             'x-rapidapi-key': API_KEY,
-            'x-rapidapi-host': 'imdb188.p.rapidapi.com'
+            'x-rapidapi-host': 'imdb-movies-web-series-etc-search.p.rapidapi.com'
         },
         success: function(data) {
             const movie = {
@@ -174,7 +174,7 @@ function removeFromLibrary(movieId) {
 
 // Fetch movie details and display them on the movie-details page
 function fetchMovieDetails(movieId) {
-    const url = `https://imdb188.p.rapidapi.com/api/v1/getMovieDetails?movie_id=${movieId}.json`; // Ensure .json suffix
+    const url = `https://imdb-movies-web-series-etc-search.p.rapidapi.com/api/v1/getMovieDetails?movie_id=${movieId}.json`; // Ensure .json suffix
 
     $.ajax({
         url: url,
@@ -182,7 +182,7 @@ function fetchMovieDetails(movieId) {
         dataType: 'json',
         headers: {
             'x-rapidapi-key': API_KEY,
-            'x-rapidapi-host': 'imdb188.p.rapidapi.com'
+            'x-rapidapi-host': 'imdb-movies-web-series-etc-search.p.rapidapi.com'
         },
         success: function(data) {
             const movieDetailsHtml = `
@@ -214,3 +214,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
